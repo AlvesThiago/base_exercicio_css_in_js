@@ -25,7 +25,15 @@ export const VagaTitulo = styled.h3`
   margin-bottom: 16px;
 `
 
-export const VagaLink = styled.a`
+
+type VagaLinkProps = {
+  href: string;
+  children: React.ReactNode;
+};
+
+
+
+export const VagaLink = styled.a<VagaLinkProps>`
   border-color: var(--cor-principal);
   background-color: var(--cor-principal);
   color: var(--cor-secundaria);

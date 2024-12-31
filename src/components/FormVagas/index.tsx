@@ -1,18 +1,18 @@
-import { useState } from 'react'
-import type { FormEvent } from 'react'
-import { Form, Botao, Campo } from './FormVagas.module'
+import { useState } from 'react';
+import Form from './FormVagas.module';
+import { Botao, Campo } from './FormVagas.module';
 
 type Props = {
-  aoPesquisar: (termo: string) => void
-}
+  aoPesquisar: (termo: string) => void;
+};
 
 const FormVagas = ({ aoPesquisar }: Props) => {
-  const [termo, setTermo] = useState<string>('')
+  const [termo, setTermo] = useState<string>('');
 
-  const aoEnviarForm = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    aoPesquisar(termo.toLocaleLowerCase())
-  }
+  const aoEnviarForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    aoPesquisar(termo.toLocaleLowerCase());
+  };
 
   return (
     <Form onSubmit={aoEnviarForm}>
@@ -23,7 +23,7 @@ const FormVagas = ({ aoPesquisar }: Props) => {
       />
       <Botao type="submit">Pesquisar</Botao>
     </Form>
-  )
-}
+  );
+};
 
-export default FormVagas
+export default FormVagas;

@@ -32,7 +32,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const Botao = styled.button`
+type BotaoProps = {
+  onClick?: () => void;
+  children: React.ReactNode;
+  type?: "button" | "submit" | "reset";
+};
+
+export const Botao = styled.button<BotaoProps>`
   border: 1px solid var(--cor-principal);
   background-color: var(--cor-secundaria);
   color: var(--cor-principal);
@@ -43,9 +49,9 @@ export const Botao = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-principal);
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
   }
-`
+`;
 
 export default GlobalStyle
